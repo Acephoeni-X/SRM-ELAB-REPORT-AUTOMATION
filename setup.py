@@ -1,3 +1,3 @@
 import os
 
-os.system("pip3 install Selenium")
+os.system("pip3 install selenium")
