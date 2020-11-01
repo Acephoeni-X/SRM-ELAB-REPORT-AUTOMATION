@@ -35,5 +35,5 @@ def flowchart(driver):
         else:
             print("Question %d is not complete"%(i))
         driver.find_element_by_xpath("/html/body/app-root/div/app-student-solve/div[1]/button[2]").click()
-        #time.sleep(3)
+        
 login()
