@@ -27,13 +27,14 @@ def flowchart(driver):
     for i in range(1,101,1):
         time.sleep(3)
         driver.find_element_by_xpath("/html/body/app-root/div/app-student-solve/div[2]/app-solve-question/div/div/div[2]/mat-card/div[3]/button[2]").click()
-        time.sleep(5)
+        time.sleep(3)
         a = driver.find_elements_by_xpath("/html/body/app-root/div/app-student-solve/div[2]/app-solve-question/div/div/div[2]/mat-card/div[4]/a[2]")
         
         if len(a)>0:
             driver.find_element_by_xpath("/html/body/app-root/div/app-student-solve/div[2]/app-solve-question/div/div/div[2]/mat-card/div[4]/a[2]").click()
         else:
             print("Question %d is not complete"%(i))
+        time.sleep(3)
         driver.find_element_by_xpath("/html/body/app-root/div/app-student-solve/div[1]/button[2]").click()
         
 login()
