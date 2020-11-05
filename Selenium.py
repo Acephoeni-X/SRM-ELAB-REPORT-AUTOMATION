@@ -1,16 +1,22 @@
 from selenium import webdriver
 import time
+from tkinter import *
+from tkinter import ttk
+import pyfiglet
+import getpass
+import os
 
 username = ""
 password = ""
 
 def login():
-    print(">>>>>>>>>>>>>>> Python TO Download E-Lab Reports <<<<<<<<<<<<<<")
-    print("Enter the Username:",end=" ")
-    username = input()
-    print("Enter the Password:",end=" ")
-    password = input()
-
+    os.system("cls")
+    pyfiglet.print_figlet("ELAB- REPORT DOWNLOAD")
+    print("## NOTE: ")
+    print("   1. Password will not appear when you type it (so keep typing)")
+    print("   2. Try not to do any work while the script is running(Risk ku lena)\n\n")
+    username = input('Username: ')
+    password = getpass.getpass('Password: ')
     driver = webdriver.Chrome()
     driver.maximize_window()
     driver.get("https://care.srmist.edu.in/srmncrppsoops/student/home")
@@ -23,7 +29,7 @@ def login():
 def flowchart(driver):
     time.sleep(5)
     driver.get("https://care.srmist.edu.in/srmncrppsoops/student/solve/2411111")
-    print("Questions which are not 100 percent completed: ")
+    print("\n\n Questions which are not 100 percent completed: ")
     for i in range(1,101,1):
         time.sleep(3)
         driver.find_element_by_xpath("/html/body/app-root/div/app-student-solve/div[2]/app-solve-question/div/div/div[2]/mat-card/div[3]/button[2]").click()
@@ -36,5 +42,5 @@ def flowchart(driver):
             print("Question %d is not complete"%(i))
         time.sleep(3)
         driver.find_element_by_xpath("/html/body/app-root/div/app-student-solve/div[1]/button[2]").click()
-        
+
 login()
