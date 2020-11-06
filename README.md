@@ -25,10 +25,7 @@ python oops.py
 ```
 4. Enter your credientials and leave it the script will automatically download the report to the default directory.
 5. Command prompt will show the questions which are not been evaluated 100 percent.
-6. Similarly for DATA STRUCTURES. Run:-
-```
-python ds.py
-```
+
 #### If you like this program don't hesitate to give me a star!. Or If you become my fan follow me I will surely follow you back 😁
 
 ##### If you have any doubt ask me on LinkdIn:- https://www.linkedin.com/in/-rishi-sharma/
