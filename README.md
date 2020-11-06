@@ -3,6 +3,7 @@
 
 ## Note: 
 - Make sure you have google chrome and python installed.
+- This program only works for OOPS elab now, will surely make one for ds also 👍
 
 ## How to use this Script?
 1. First you need to have python installed to run the script.
