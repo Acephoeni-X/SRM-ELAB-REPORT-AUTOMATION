@@ -1,7 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import time
 import pyfiglet
 import getpass
@@ -32,22 +29,16 @@ def flowchart(driver):
     driver.get("https://care.srmist.edu.in/srmncrppsoops/student/solve/2411111")
     print("\n\n Questions which are not 100 percent completed: ")
     for i in range(1,101,1):
-        wait = WebDriverWait(driver, 10)
-        element = wait.until(EC.element_to_be_clickable((By.XPATH, '/html/body/app-root/div/app-student-solve/div[2]/app-solve-question/div/div/div[2]/mat-card/div[3]/button[2]')))
-        element.click()
+        time.sleep(3)
+        driver.find_element_by_xpath("/html/body/app-root/div/app-student-solve/div[2]/app-solve-question/div/div/div[2]/mat-card/div[3]/button[2]").click()
         time.sleep(3)
         a = driver.find_elements_by_xpath("/html/body/app-root/div/app-student-solve/div[2]/app-solve-question/div/div/div[2]/mat-card/div[4]/a[2]")
-        time.sleep(3)
+        
         if len(a)>0:
-            element2 = wait.until(EC.element_to_be_clickable((By.XPATH, '/html/body/app-root/div/app-student-solve/div[2]/app-solve-question/div/div/div[2]/mat-card/div[4]/a[2]')))
-            element2.click()
-           # driver.find_element_by_xpath("/html/body/app-root/div/app-student-solve/div[2]/app-solve-question/div/div/div[2]/mat-card/div[4]/a[2]").click()
+            driver.find_element_by_xpath("/html/body/app-root/div/app-student-solve/div[2]/app-solve-question/div/div/div[2]/mat-card/div[4]/a[2]").click()
         else:
             print("Question %d is not complete"%(i))
-
-        time.sleep(2)
-        element3 = wait.until(EC.element_to_be_clickable((By.XPATH, '/html/body/app-root/div/app-student-solve/div[1]/button[2]')))
-        element3.click()
-        # driver.find_element_by_xpath("/html/body/app-root/div/app-student-solve/div[1]/button[2]").click()
+        time.sleep(3)
+        driver.find_element_by_xpath("/html/body/app-root/div/app-student-solve/div[1]/button[2]").click()
 
 login()
